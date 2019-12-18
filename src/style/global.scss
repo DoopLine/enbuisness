@@ -1,0 +1,58 @@
+@import "./theme.scss";
+
+// setup the font
+@font-face {
+	font-family:  'Ubuntu';
+	src: url('/assets/fonts/Ubuntu-Regular.ttf');
+}
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+}
+
+html,
+body {
+    position: relative;
+	min-width: 100vh;
+	font-size: 62.5%;
+	font-family: "Ubuntu", "Helvetica", sans-serif;
+}
+
+
+// set core body defaults
+body {
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+// Remove the list style of the ul and ol elements with a class attribute
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+// the A element that not have a class get the default style
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+// Make image easier to work
+img {
+	max-width: 100%;
+	display: block;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
