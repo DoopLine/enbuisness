@@ -1,0 +1,107 @@
+<script>
+  import MdRoom from "svelte-icons/md/MdRoom.svelte";
+  import MdAssignmentInd from "svelte-icons/md/MdAssignmentInd.svelte";
+  import FiPhone from "svelte-icons/fi/FiPhone.svelte";
+
+  import Input from "../components/Input.svelte";
+  import Button from "../components/Button.svelte";
+</script>
+
+<style lang="scss">
+  @import "../style/theme.scss";
+
+  section {
+    display: flex;
+    color: $dark-color;
+    justify-content: space-evenly;
+    margin: auto;
+    max-width: 80rem;
+    margin-bottom: 6rem;
+
+    h6 {
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+    padding: 4rem;
+
+    :global(*) {
+      margin-bottom: 1rem;
+    }
+
+    :global(button) {
+      align-self: flex-end;
+    }
+  }
+  article {
+    display: flex;
+    flex-basis: 35%;
+    flex-direction: column;
+    padding: 4rem;
+    justify-content: space-between;
+    color: #fff;
+    background-color: $main-color;
+    border-radius: $radius;
+
+    > p, div > p {
+      font-size: 1.3rem;
+      margin-left: 2rem;
+    }
+  }
+
+  span {
+    display: flex;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    :global(svg) {
+      width: 1.8rem;
+      margin-right: 0.2rem;
+    }
+  }
+</style>
+
+<section>
+  <article>
+    <h6>Venha nos visitar</h6>
+    <div>
+      <span>
+        <MdRoom />
+        <p>Localização</p>
+      </span>
+      <p>Condomínio Jardin das Rosas, 148 R/C</p>
+    </div>
+    <div>
+      <span>
+        <FiPhone />
+        <p>Telefones</p>
+      </span>
+      <p>990 390 324</p>
+      <p>935 677 777</p>
+      <p>927 939 824</p>
+    </div>
+    <div>
+      <span>
+        <MdAssignmentInd />
+        <p>NIF</p>
+      </span>
+      <p>5417276642</p>
+    </div>
+    <p>ANGOLA - LUANDA</p>
+  </article>
+  <form>
+    <h6>Mantenha-se em Contacto</h6>
+    <Input placeholder="Seu nome..." />
+    <Input type="email" placeholder="Seu email..." />
+    <Input type="textarea" placeholder="Sua mensagem..." />
+    <Button type="submit">Enviar</Button>
+  </form>
+</section>

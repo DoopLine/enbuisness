@@ -1,6 +1,7 @@
 <script>
   export let type = "button";
-//   export let className = "";
+  export let secondary = false;
+  export let size = "md";
 </script>
 
 <style lang="scss">
@@ -17,26 +18,37 @@
     border: none;
     width: fit-content;
     padding: 1rem 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
 
     &:hover,
     &:focus {
       box-shadow: 0 1px 8px lighten($dark-color, 5);
     }
 
-    &:disabled{
-        background-color: lighten($main-color, 30);
-        box-shadow: none;
-        cursor: not-allowed;
+    &:disabled {
+      background-color: lighten($main-color, 30);
+      box-shadow: none;
+      cursor: not-allowed;
     }
+  }
+
+  .secondary {
+    background-color: #fff;
+    border: 1px solid $light-color;
+    color: $dark-color;
+  }
+
+  .large {
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
   }
 </style>
 
-<button {type}>
+<button on:click {type} class:secondary class:large={size === 'lg'}>
   <slot>Lorem</slot>
 </button>

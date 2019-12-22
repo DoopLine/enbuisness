@@ -1,5 +1,31 @@
 <script>
   import InfoCard from "../components/InfoCard.svelte";
+  import Contact from "../containers/Contact.svelte";
+  import About from "../containers/About.svelte";
+
+  const graphicsImages = [
+    {
+      text:
+        "1. A nossa linha de actuação pauta-se pela integridade, profissionalismo e responsabilidade. O nosso objetivo último é o cumprimento dos compromissos assumidos e desta forma, responder satisfatoriamente às expectativas dos nossos clientes.",
+      image: "./assets/graphics/web_boilerplate.png"
+    },
+    {
+      text:
+        "2. A nossa linha de actuação pauta-se pela integridade, profissionalismo e responsabilidade. O nosso objetivo último é o cumprimento dos compromissos assumidos e desta forma, responder satisfatoriamente às expectativas dos nossos clientes.",
+      image: "./assets/graphics/pink_site.png"
+    },
+    {
+      text:
+        "3. A nossa linha de actuação pauta-se pela integridade, profissionalismo e responsabilidade. O nosso objetivo último é o cumprimento dos compromissos assumidos e desta forma, responder satisfatoriamente às expectativas dos nossos clientes.",
+      image: "./assets/graphics/web_boilerplate.png"
+    },
+    {
+      text:
+        "4. A nossa linha de actuação pauta-se pela integridade, profissionalismo e responsabilidade. O nosso objetivo último é o cumprimento dos compromissos assumidos e desta forma, responder satisfatoriamente às expectativas dos nossos clientes.",
+      image: "./assets/graphics/pink_site.png"
+    },
+    
+  ];
 </script>
 
 <style lang="scss">
@@ -11,40 +37,19 @@
     margin: auto;
   }
 
-  h1 {
-    font-size: 3.5rem;
+  h5 {
     text-align: center;
     margin-bottom: 6rem;
   }
 </style>
 
 <main>
-  <h1>Conheça os nossos serviços</h1>
-  <InfoCard src="/assets/finance_graph.jpg" alt="finance" title="Consultoria">
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque rerum
-      dolorum aspernatur quisquam nam laboriosam pariatur esse ad, iure vitae?
-      Necessitatibus pariatur quod sequi ipsum repudiandae facilis eaque,
-      voluptates voluptate!
-    </p>
-  </InfoCard>
-  <InfoCard src="/assets/finance_graph.jpg" alt="media" title="Media e T.I" reverse={true}>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque rerum
-      dolorum aspernatur quisquam nam laboriosam pariatur esse ad, iure vitae?
-      Necessitatibus pariatur quod sequi ipsum repudiandae facilis eaque,
-      voluptates voluptate!
-    </p>
-  </InfoCard>
-  <InfoCard
-    src="/assets/finance_graph.jpg"
-    alt="gestao"
-    title="Gestão Empresarial">
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque rerum
-      dolorum aspernatur quisquam nam laboriosam pariatur esse ad, iure vitae?
-      Necessitatibus pariatur quod sequi ipsum repudiandae facilis eaque,
-      voluptates voluptate!
-    </p>
-  </InfoCard>
+  <h5 id="service">Conheça os nossos serviços</h5>
+  <InfoCard title="Consultoria" images={graphicsImages}></InfoCard>
+  <InfoCard type="graphics" title="Media e T.I" reverse={true}></InfoCard>
+  <InfoCard type="economic" title="Consultoria"></InfoCard>
+  <h5 id="contact">Contacto</h5>
+  <Contact />
+  <h5 id="about">Sobre Nós</h5>
+  <About />
 </main>

@@ -1,4 +1,6 @@
 @import "./theme.scss";
+@import "./animations.scss";
+@import "./typography.scss";
 
 // setup the font
 @font-face {
@@ -22,6 +24,7 @@ body {
 	min-width: 100vh;
 	font-size: 62.5%;
 	font-family: "Ubuntu", "Helvetica", sans-serif;
+	scroll-behavior: smooth;
 }
 
 
