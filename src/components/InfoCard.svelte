@@ -10,6 +10,11 @@
 
   let showGrid = false;
   let currIndex = undefined;
+
+  const handleShowGrid = () => {
+    if (showGrid) currIndex = undefined;
+    showGrid = !showGrid;
+  };
 </script>
 
 <style lang="scss">
@@ -83,13 +88,13 @@
     <figure
       class:danger={type === 'graphics'}
       class:success={type === 'economic'}
-      on:click={() => (showGrid = !showGrid)}>
+      on:click={handleShowGrid}>
       <Logo />
     </figure>
   {/if}
   <article>
     <h4>{title}</h4>
-    {#if currIndex !== undefined && showGrid }
+    {#if currIndex !== undefined && showGrid}
       <p>{images[currIndex].text}</p>
     {:else}
       <p>
@@ -99,8 +104,8 @@
         eaque, voluptates voluptate!
       </p>
     {/if}
-    <Button on:click={() => (showGrid = !showGrid)}>
-      {showGrid ? "Voltar" : "Ver mais"}
+    <Button on:click={handleShowGrid}>
+      {showGrid ? 'Voltar' : 'Ver mais'}
     </Button>
   </article>
 </section>

@@ -15,7 +15,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-color: $light-color;
+    background-color: $white-color;
     cursor: pointer;
     transition: all .5s;
     color: $main-color;

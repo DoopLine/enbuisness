@@ -47,7 +47,7 @@
     :global(svg) {
       margin-right: 0.5rem;
       cursor: pointer;
-      color: $light-color;
+      color: $white-color;
     }
   }
 </style>

@@ -23,7 +23,7 @@
     font-size: 1.4rem;
 
     :global(svg) {
-      color: $light-color;
+      color: $white-color;
     }
   }
 
@@ -40,7 +40,7 @@
   a {
     text-decoration: none;
     margin: 0 1rem;
-    color: $light-color;
+    color: $white-color;
     transition: 0.3s;
     border-bottom-color: transparent;
     padding: 3px;
@@ -48,7 +48,7 @@
     font-weight: 500;
 
     &:hover {
-      border-bottom: 3px solid $light-color;
+      border-bottom: 3px solid $white-color;
     }
   }
 

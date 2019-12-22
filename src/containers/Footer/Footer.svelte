@@ -23,7 +23,7 @@
     :last-child {
       @include flex-center;
       font-size: 1.5rem;
-      color: $light-color;
+      color: $white-color;
     }
   }
   div {

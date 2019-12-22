@@ -60,7 +60,7 @@
     span {
       width: 3rem;
       margin-right: 5rem;
-      color: $light-color;
+      color: $white-color;
       cursor: pointer;
       display: none;
       
@@ -76,6 +76,7 @@
     top: 0;
     padding: 0 6rem;
     background-color: $main-color;
+    box-shadow: 0 3px 5px rgba(0,0,0,.2);
   }
 </style>
 

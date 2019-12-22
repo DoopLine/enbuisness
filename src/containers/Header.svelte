@@ -36,7 +36,7 @@
       margin-bottom: 8rem;
 
       h1 {
-        color: $light-color;
+        color: $white-color;
         margin-bottom: -1rem;
         text-shadow: 0 0 1px lighten($dark-color, 5);
         animation-duration: 1s;

@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     background-color: $main-color;
-    color: $light-color;
+    color: $white-color;
     border-radius: 5px;
     box-shadow: 0 0 3px #00000026;
     border: none;
@@ -39,7 +39,7 @@
 
   .secondary {
     background-color: #fff;
-    border: 1px solid $light-color;
+    border: 1px solid $white-color;
     color: $dark-color;
   }
 
