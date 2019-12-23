@@ -3,13 +3,17 @@
 </script>
 
 <style lang="scss">
-  @import '../style/mixins.scss';
-  @import '../style/theme.scss';
+  @import "../style/mixins.scss";
+  @import "../style/theme.scss";
   section {
     font-size: 1.5rem;
     display: flex;
 
-    p { 
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+    }
+
+    p {
       @include flex-center;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       padding: 2rem;
@@ -17,6 +21,13 @@
 
       &:not(:last-child) {
         margin-right: 1rem;
+      }
+
+      @media only screen and (max-width: $mobile) {
+        &:not(:last-child) {
+          margin-right: initial;
+          margin-bottom: 3rem;
+        }
       }
     }
   }

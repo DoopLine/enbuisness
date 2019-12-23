@@ -12,13 +12,15 @@
     @include flex-center;
     flex-direction: column;
     justify-content: space-between;
-    background-color: $main-color;
+    background: url("/assets/bg_polygon.png") no-repeat $main-color;
+    background-position: center;
+    background-size: cover;
     min-height: 15rem;
-    padding: 3rem 2rem;
-
+    padding: 2rem;
   }
   section {
     display: flex;
+    align-items: center;
 
     :last-child {
       @include flex-center;
@@ -38,8 +40,8 @@
   <section>
     <div>
       <SocialIcon />
-      <SocialIcon socialType="instagram"/>
-      <SocialIcon socialType="whatsapp"/>
+      <SocialIcon socialType="instagram" />
+      <SocialIcon socialType="whatsapp" />
     </div>
     <Logo />
   </section>

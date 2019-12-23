@@ -14,11 +14,11 @@
     width: 100%;
     font-size: 1.5rem;
     border: none;
-    border-bottom: 2px solid $dark-color;
-    padding: 0 1rem;
+    border-bottom: 2px solid $light-color;
+    padding: 0 1rem; 
     transition: 0.3s;
     outline: none;
-    background-color: #0000000d;
+    background-color: rgba(0,0,0,.03);
 
     &:focus {
       border-color: $main-color;

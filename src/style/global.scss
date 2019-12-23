@@ -15,7 +15,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-
 }
 
 html,
@@ -25,6 +24,11 @@ body {
 	font-size: 62.5%;
 	font-family: "Ubuntu", "Helvetica", sans-serif;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
+
+	@media only screen and (max-width: $desktop - 50) {
+		font-size: 50.5%;
+	}
 }
 
 

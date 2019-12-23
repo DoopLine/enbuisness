@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 50%;
+    width: 50rem;
   }
 
   figure {
@@ -32,7 +32,7 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: 100%; 
       object-fit: cover;
       animation: zoomIn 1s ease-out;
       border-radius: $radius;

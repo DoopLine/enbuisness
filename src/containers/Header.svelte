@@ -4,7 +4,6 @@
   import Button from "../components/Button.svelte";
   import Carrocel from "../components/Carrocel.svelte";
   import NavBar from "../components/NavBar.svelte";
-
 </script>
 
 <style lang="scss">
@@ -13,21 +12,32 @@
   .header {
     display: flex;
     flex-direction: column;
-    background-color: $main-color;
+    background: url("/assets/bg_polygon.png") no-repeat $main-color;
+    background-size: cover;
+    background-position-y: center;
     height: fit-content;
     padding: 3rem 6rem;
     position: relative;
     align-items: center;
-    height: 55rem;
+    height: 65rem;
+
+    @media only screen and (max-width: $tablet) {
+      height: 70rem;
+    }
   }
 
   .header_content {
     display: flex;
     height: 100%;
-    flex-basis: 100%;
+    width: 100%;
     justify-content: space-between;
     max-width: $landscape;
     align-items: center;
+
+    @media only screen and (max-width: $tablet) {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
 
     &_text {
       display: flex;
@@ -54,6 +64,13 @@
       }
     }
   }
+
+  img {
+    position: absolute;
+    bottom: -8px;
+    animation: fadeInUp 1s ease backwards;
+    max-width: 101%;
+  }
 </style>
 
 <header id="home" class="header">
@@ -65,4 +82,5 @@
     </article>
     <Carrocel />
   </section>
+  <img src="/assets/svg/shake_hands.svg" alt="aperto de mãos" />
 </header>

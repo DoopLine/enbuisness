@@ -1,5 +1,9 @@
 <script>
   import Logo from "./Logo.svelte";
+  import GraphicsLogo from "./GraphicsLogo.svelte";
+  import ConsultLogo from "./ConsultLogo.svelte";
+  import EnOutline from "./EnOutline.svelte";
+
   import Button from "./Button.svelte";
   import GridImage from "../components/GridImage.svelte";
 
@@ -26,9 +30,16 @@
     color: $dark-color;
     margin-bottom: 10rem;
     height: 30rem;
+
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      height: initial;
+      max-height: initial;
+    }
   }
 
   figure {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,9 +50,8 @@
     background-color: $main-color;
     cursor: pointer;
 
-    h3 {
-      color: #fff;
-      font-size: 4rem;
+    @media only screen and (max-width: $mobile) {
+      height: 30rem;
     }
   }
   .success {
@@ -65,6 +75,11 @@
       margin-bottom: 1rem;
     }
 
+    @media only screen and (max-width: $mobile) {
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+
     :global(button) {
       align-self: flex-end;
       margin-top: 2rem;
@@ -74,9 +89,20 @@
   .reverse {
     flex-direction: row-reverse;
 
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      height: initial;
+      max-height: initial;
+    }
+
     article {
       padding-right: 10rem;
       padding-left: 0;
+
+      @media only screen and (max-width: $mobile) {
+        margin-top: 2rem;
+        padding: 1rem;
+      }
     }
   }
 </style>
@@ -89,7 +115,14 @@
       class:danger={type === 'graphics'}
       class:success={type === 'economic'}
       on:click={handleShowGrid}>
-      <Logo />
+      {#if type === 'graphics'}
+        <GraphicsLogo size="lg" />
+      {:else if type === 'economic'}
+        <ConsultLogo size="lg" />
+      {:else}
+        <Logo size="lg" />
+      {/if}
+      <EnOutline />
     </figure>
   {/if}
   <article>
