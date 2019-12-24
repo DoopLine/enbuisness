@@ -1,17 +1,39 @@
 <script>
+  import { onDestroy } from "svelte";
+
   import EnPolygon from "./EnPolygon.svelte";
   import { fade } from "svelte/transition";
 
+  export let currColor;
+
   const items = [
-    { image: "./assets/photo1.png", desc: "Social" },
-    { image: "./assets/photo2.jpeg", desc: "some " },
-    { image: "./assets/photo3.jpeg", desc: "Desc" }
+    { image: "./assets/intro.mp4", desc: "Introdução", color: "blue" },
+    { image: "./assets/photo1.png", desc: "Social", color: "blue" },
+    { image: "./assets/photo2.jpeg", desc: "some ", color: "orange" },
+    { image: "./assets/photo3.jpeg", desc: "Desc", color: "green" }
   ];
 
   let currIndex = 0;
 
+  window.addEventListener("scroll", handleWindowScroll);
+
+  onDestroy(() => {
+    console.log("scroll evt");
+    window.removeEventListener("scroll", handleWindowScroll);
+  });
+
   // Methods / Functions
-  const handleChangeContent = index => (currIndex = index);
+  const handleChangeContent = (index, color) => {
+    currIndex = index;
+    currColor = color;
+  };
+
+  function handleWindowScroll() {
+    if (window.scrollY > 5) {
+      currIndex = 0;
+      currColor = "blue";
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -30,9 +52,10 @@
     margin-bottom: 1rem;
     border-radius: $radius;
 
-    img {
+    img,
+    video {
       width: 100%;
-      height: 100%; 
+      height: 100%;
       object-fit: cover;
       animation: zoomIn 1s ease-out;
       border-radius: $radius;
@@ -54,21 +77,23 @@
 
 <article>
   <figure>
-    <img src={items[currIndex].image} alt={items[currIndex].desc} />
+    {#if items[currIndex].image.endsWith('.mp4')}
+      <video
+        src={items[currIndex].image}
+        alt={items[currIndex].desc}
+        controls
+        on:ended={e => e.target.play()} />
+    {:else}
+      <img src={items[currIndex].image} alt={items[currIndex].desc} />
+    {/if}
   </figure>
   <nav>
-    <EnPolygon
-      size="md"
-      stroke={currIndex !== 0}
-      on:click={() => handleChangeContent(0)} />
-    <EnPolygon
-      size="md"
-      stroke={currIndex !== 1}
-      on:click={() => handleChangeContent(1)} />
-    <EnPolygon
-      size="md"
-      stroke={currIndex !== 2}
-      on:click={() => handleChangeContent(2)} />
+    {#each items as _, i}
+      <EnPolygon
+        size="md"
+        stroke={currIndex !== i}
+        on:click={() => handleChangeContent(i, _.color)} />
+    {/each}
   </nav>
 
 </article>

@@ -1,5 +1,6 @@
 <script>
   import GridImagePreview from "../components/GridImagePreview.svelte";
+  // import { fly } from 'svelte/transition';
 
   export let images = [];
   export let currImageindex;
@@ -15,7 +16,7 @@
     if (currImageindex === images.length - 1) return (currImageindex = 0);
     currImageindex++;
   };
-  
+
   const handlePrev = () => {
     if (currImageindex === 0) return (currImageindex = images.length - 1);
     currImageindex--;
@@ -41,6 +42,7 @@
     height: 49.5%;
     object-fit: cover;
     cursor: pointer;
+    animation: fadeIn 1s ease-out;
 
     &:nth-child(1) {
       border-top-left-radius: $radius;
@@ -64,7 +66,7 @@
 </style>
 
 <article>
-  {#each images as {text, image}, i}
+  {#each images as { text, image }, i}
     <img src={image} alt="teste" on:click={() => handleOpenShowImage(i)} />
   {/each}
   {#if showImage}

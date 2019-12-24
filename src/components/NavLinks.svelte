@@ -9,7 +9,7 @@
   const linksList = [
     { title: "início", href: "#home" },
     { title: "serviços", href: "#service" },
-    { title: "portfólio", href: "*" },
+    // { title: "portfólio", href: "*" },
     { title: "contato", href: "#contact" },
     { title: "sobre", href: "#about" }
   ];

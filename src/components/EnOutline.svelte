@@ -5,9 +5,10 @@
 <style lang="scss">
   img {
     position: absolute;
-    width: 35em;
+    width: 57em;
     bottom: 0;
-    right: 0;
+    right: -9px;
+    opacity: .2;
   }
 </style>
 

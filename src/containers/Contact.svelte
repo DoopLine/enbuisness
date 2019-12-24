@@ -71,7 +71,7 @@
 
 <section>
   <article>
-    <h6>Venha nos visitar</h6>
+    <h6>Informações</h6>
     <div>
       <span>
         <MdRoom />

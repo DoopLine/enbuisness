@@ -4,6 +4,8 @@
   import Button from "../components/Button.svelte";
   import Carrocel from "../components/Carrocel.svelte";
   import NavBar from "../components/NavBar.svelte";
+
+  let currColor = "blue";
 </script>
 
 <style lang="scss">
@@ -24,6 +26,14 @@
     @media only screen and (max-width: $tablet) {
       height: 70rem;
     }
+  }
+
+  .bg-orange{
+    background-color: $danger-color;
+  }
+
+  .bg-green{
+    background-color: $success-color;
   }
 
   .header_content {
@@ -67,20 +77,20 @@
 
   img {
     position: absolute;
-    bottom: -8px;
+    bottom: -30px;
     animation: fadeInUp 1s ease backwards;
     max-width: 101%;
   }
 </style>
 
-<header id="home" class="header">
-  <NavBar />
+<header id="home" class="header" class:bg-orange={currColor === "orange"} class:bg-green={currColor === "green"}>
+  <NavBar {currColor} />
   <section class="header_content">
     <article class="header_content_text">
       <h1 class="slide-in-left">Enbusiness</h1>
       <h6 class="slide-in-left">Qualquer negócio em boas mãos.</h6>
     </article>
-    <Carrocel />
+    <Carrocel bind:currColor />
   </section>
   <img src="/assets/svg/shake_hands.svg" alt="aperto de mãos" />
 </header>

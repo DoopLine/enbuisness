@@ -15,10 +15,10 @@
     font-size: 1.5rem;
     border: none;
     border-bottom: 2px solid $light-color;
-    padding: 0 1rem; 
+    padding: 0 1rem;
     transition: 0.3s;
     outline: none;
-    background-color: rgba(0,0,0,.03);
+    background-color: rgba(0, 0, 0, 0.03);
 
     &:focus {
       border-color: $main-color;
@@ -33,6 +33,7 @@
     width: 100%;
     height: 8rem;
     padding-top: 0.5rem;
+    resize: none;
   }
 </style>
 

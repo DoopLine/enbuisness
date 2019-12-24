@@ -1,5 +1,6 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte";
+  import { fade } from "svelte/transition";
 
   import MdChevronLeft from "svelte-icons/md/MdChevronLeft.svelte";
   import MdChevronRight from "svelte-icons/md/MdChevronRight.svelte";
@@ -46,7 +47,7 @@
   }
 </style>
 
-<div tabindex="0" bind:this={showImageNode} on:blur>
+<div tabindex="0" bind:this={showImageNode} on:blur transition:fade>
   <MdChevronLeft on:click={()=> dispatch('prev')} />
   <img src={imagePath} alt="teste" />
   <MdChevronRight on:click={()=> dispatch('next')} />

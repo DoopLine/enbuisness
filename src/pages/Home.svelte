@@ -3,7 +3,11 @@
   import Contact from "../containers/Contact.svelte";
   import About from "../containers/About.svelte";
 
-  import { graphicsServiceData, consultingServiceData } from '../data/servicesData.js';
+  import {
+    graphicsServiceData,
+    consultingServiceData,
+    geralServiceData
+  } from "../data/servicesData.js";
 </script>
 
 <style lang="scss">
@@ -23,9 +27,16 @@
 
 <main>
   <h5 id="service">Conheça os nossos serviços</h5>
-  <InfoCard title="Serviços" images={graphicsServiceData}></InfoCard>
-  <InfoCard type="graphics" title="Media Digital" reverse={true} images={graphicsServiceData}></InfoCard>
-  <InfoCard type="economic" title="Consultoria e Gestão" images={consultingServiceData}></InfoCard>
+  <InfoCard title="Comércio" images={geralServiceData} />
+  <InfoCard
+    type="graphics"
+    title="Media Digital"
+    reverse={true}
+    images={graphicsServiceData} />
+  <InfoCard
+    type="economic"
+    title="Consultoria e Gestão"
+    images={consultingServiceData} />
   <h5 id="contact">Contacto</h5>
   <Contact />
   <h5 id="about">Sobre Nós</h5>

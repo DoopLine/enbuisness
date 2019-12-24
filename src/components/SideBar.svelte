@@ -11,7 +11,8 @@
   aside {
     position: fixed;
     width: 40%;
-    height: 100vh; 
+    min-width: 50rem;
+    height: 100%; 
     left: 0;
     top: 0;
     bottom: 0;
@@ -30,6 +31,6 @@
   }
 </style>
 
-<aside transition:fly={{x: -400}} tabindex="0" on:blur  bind:this={sideBar}>
+<aside transition:fly={{x: -400}} tabindex="0" on:blur   bind:this={sideBar}>
   <slot />
 </aside>

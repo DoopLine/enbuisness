@@ -5,28 +5,57 @@
   import MdMenu from "svelte-icons/md/MdMenu.svelte";
 
   import Logo from "./Logo.svelte";
+  import GraphicsLogo from "./GraphicsLogo.svelte";
+  import ConsultLogo from "./ConsultLogo.svelte";
   import NavLinks from "./NavLinks.svelte";
   import SideBar from "./SideBar.svelte";
+
+  export let currColor = "blue";
 
   let floatNavBar = false;
   let showSideNav = false;
   let location = window.location.hash;
+  let timeout;
 
-  window.addEventListener("scroll", handleWindowScroll);
+  $: currLogoComponent = () => {
+    if (currColor === "orange") {
+      return GraphicsLogo;
+    } else if (currColor === "green") {
+      return ConsultLogo;
+    } else {
+      return Logo;
+    }
+  };
+
+  document.addEventListener("scroll", handleWindowScroll);
 
   onDestroy(() => {
     console.log("scroll evt");
-    window.removeEventListener("scroll", handleWindowScroll);
+    document.removeEventListener("scroll", handleWindowScroll);
   });
 
   function handleWindowScroll(e) {
+    // window.location.hash = location;
     window.scrollY > 5 ? (floatNavBar = true) : (floatNavBar = false);
-    location = window.location.hash;
+    let calc =
+      (window.scrollY * 100) /
+      (document.scrollingElement.scrollHeight - window.innerHeight);
+
+    if (calc >= 25 && calc < 78) {
+      location = "#service";
+    } else if (calc >= 78 && calc < 98) {
+      location = "#contact";
+    } else if (calc >= 98) {
+      location = "#about";
+    } else {
+      location = "#home";
+    }
   }
 
   const handleCloseSideBar = () => {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       showSideNav = false;
+      clearTimeout(timeout);
     }, 200);
   };
 </script>
@@ -63,7 +92,6 @@
       color: $white-color;
       cursor: pointer;
       display: none;
-      
 
       @media only screen and (max-width: $desktop) {
         display: initial;
@@ -76,7 +104,7 @@
     top: 0;
     padding: 0 6rem;
     background-color: $main-color;
-    box-shadow: 0 3px 5px rgba(0,0,0,.2);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   }
 </style>
 
@@ -84,7 +112,8 @@
   <span on:click={() => (showSideNav = true)}>
     <MdMenu />
   </span>
-  <Logo size="sm" />
+  <svelte:component this={currLogoComponent()} />
+  <!-- <Logo size="sm" /> -->
   <NavLinks {location} />
   {#if showSideNav}
     <SideBar on:blur={handleCloseSideBar}>
