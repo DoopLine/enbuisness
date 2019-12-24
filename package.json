@@ -25,9 +25,12 @@
     "carbon-components": "^10.9.0"
   },
   "dependencies": {
-    "svelte-icons": "^1.1.0",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "gh-pages": "^2.1.1",
+    "rollup-plugin-babel": "^4.3.3",
     "sirv-cli": "^0.4.4",
+    "svelte-icons": "^1.1.0",
     "validate.js": "^0.13.1"
   },
   "browserslist": [

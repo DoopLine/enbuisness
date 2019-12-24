@@ -92,5 +92,5 @@
     </article>
     <Carrocel bind:currColor />
   </section>
-  <img src="/assets/svg/shake_hands.svg" alt="aperto de mãos" />
+  <img src="./assets/svg/shake_hands.svg" alt="aperto de mãos" />
 </header>
