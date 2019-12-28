@@ -14,7 +14,7 @@
   .header {
     display: flex;
     flex-direction: column;
-    background: url("./assets/bg_polygon.png") no-repeat $main-color;
+    background: url("assets/bg_polygon.png") no-repeat $main-color;
     background-size: cover;
     background-position-y: center;
     height: fit-content;
