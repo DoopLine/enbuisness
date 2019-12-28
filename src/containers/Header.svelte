@@ -14,7 +14,7 @@
   .header {
     display: flex;
     flex-direction: column;
-    background: url("/assets/bg_polygon.png") no-repeat $main-color;
+    background: url("./assets/bg_polygon.png") no-repeat $main-color;
     background-size: cover;
     background-position-y: center;
     height: fit-content;
@@ -28,11 +28,11 @@
     }
   }
 
-  .bg-orange{
+  .bg-orange {
     background-color: $danger-color;
   }
 
-  .bg-green{
+  .bg-green {
     background-color: $success-color;
   }
 
@@ -83,7 +83,11 @@
   }
 </style>
 
-<header id="home" class="header" class:bg-orange={currColor === "orange"} class:bg-green={currColor === "green"}>
+<header
+  id="home"
+  class="header"
+  class:bg-orange={currColor === 'orange'}
+  class:bg-green={currColor === 'green'}>
   <NavBar {currColor} />
   <section class="header_content">
     <article class="header_content_text">
