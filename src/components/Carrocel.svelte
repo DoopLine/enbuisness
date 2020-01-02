@@ -52,6 +52,11 @@
     margin-bottom: 1rem;
     border-radius: $radius;
 
+    @media only screen and (max-width: $tablet) {
+      margin: 0 2rem;
+      margin-bottom: 4rem;
+    }
+
     img,
     video {
       width: 100%;
@@ -88,13 +93,13 @@
       <img src={items[currIndex].image} alt={items[currIndex].desc} />
     {/if}
   </figure>
-  <nav>
+  <!-- <nav>
     {#each items as _, i}
       <EnPolygon
         size="md"
         stroke={currIndex !== i}
         on:click={() => handleChangeContent(i, _.color)} />
     {/each}
-  </nav>
+  </nav> -->
 
 </article>

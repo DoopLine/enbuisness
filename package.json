@@ -29,13 +29,15 @@
     "gh-pages": "^2.1.1"
   },
   "dependencies": {
-    "svelte-icons": "^1.1.0",
+    "postcss-preset-env": "^6.7.0",
     "sirv-cli": "^0.4.4",
+    "svelte-icons": "^1.1.0",
     "validate.js": "^0.13.1"
   },
   "browserslist": [
     "last 5 versions",
     "not dead",
-    "> 0.2%"
+    "> 0.2%",
+    "iOS 7"
   ]
 }

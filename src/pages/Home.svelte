@@ -17,6 +17,10 @@
     padding: 6rem 5rem;
     max-width: $landscape;
     margin: auto;
+
+    @media only screen and (max-width: $mobile) {
+      padding: 6rem 2rem;
+    }
   }
 
   h5 {

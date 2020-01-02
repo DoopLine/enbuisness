@@ -26,14 +26,9 @@
     background-size: cover;
     background-position-y: center;
     height: fit-content;
-    padding: 3rem 6rem;
     position: relative;
     align-items: center;
-    height: 75rem;
-
-    @media only screen and (min-width: $landscape + 500) {
-      height: 100rem;
-    }
+    height: fit-content;
   }
 
   .bg-orange {
@@ -46,7 +41,8 @@
 
   .header_content {
     display: flex;
-    height: 100%;
+    height: fit-content;
+    margin-bottom: 3rem;
     width: 100%;
     justify-content: space-around;
     max-width: $landscape;
@@ -58,9 +54,13 @@
       justify-content: center;
     }
 
-    @media only screen and (min-width: $landscape) {
-      height: 85%;
+    @media only screen and (max-width: $mobile) {
+      margin-bottom: -1rem;
     }
+
+    // @media only screen and (min-width: $landscape) {
+    //   height: 85%;
+    // }
 
     &_text {
       display: flex;
@@ -89,8 +89,6 @@
   }
 
   .handshake-image {
-    position: absolute;
-    bottom: -30px;
     animation: fadeInUp 1s ease backwards;
     width: 100%;
     transform: scale(1.1);

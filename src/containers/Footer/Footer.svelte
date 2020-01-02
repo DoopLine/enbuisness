@@ -22,6 +22,11 @@
     display: flex;
     align-items: center;
 
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
     :last-child {
       @include flex-center;
       font-size: 1.5rem;
@@ -39,11 +44,16 @@
 <footer>
   <section>
     <div>
-      <SocialIcon href="https://www.facebook.com/Enbusiness-1520586474901498/"/>
-      <SocialIcon socialType="instagram" href="https://instagram.com/enbusiness?igshid=16u4cuxk9n1u2" />
+      <SocialIcon
+        href="https://www.facebook.com/Enbusiness-1520586474901498/" />
+      <SocialIcon
+        socialType="instagram"
+        href="https://instagram.com/enbusiness?igshid=16u4cuxk9n1u2" />
       <SocialIcon socialType="whatsapp" />
     </div>
-    <Logo />
+    <a href="#home">
+      <Logo />
+    </a>
   </section>
   <section>
     <small>© 2020 enbusiness &reg;, Todos os direitos reservados.</small>

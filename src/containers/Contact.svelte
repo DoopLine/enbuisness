@@ -22,6 +22,11 @@
       text-transform: uppercase;
       margin-bottom: 2rem;
     }
+
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      margin-bottom: 5rem;
+    }
   }
 
   form {
@@ -36,6 +41,15 @@
 
     :global(button) {
       align-self: flex-end;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      align-items: center;
+
+      :global(button) {
+        align-self: initial;
+        margin-top: 1rem;
+      }
     }
   }
   article {

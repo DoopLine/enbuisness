@@ -63,12 +63,17 @@
 <style lang="scss">
   @import "../style/theme.scss";
 
-  .wrapper{
+  .wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 50;
-    transition: 0.5s; 
+    transition: 0.5s;
+    padding: 3rem 6rem;
+
+    @media only screen and (max-width: $mobile) {
+      padding: 3rem;
+    }
   }
 
   nav {
@@ -119,7 +124,9 @@
     <span on:click={() => (showSideNav = true)}>
       <MdMenu />
     </span>
-    <svelte:component this={currLogoComponent()} />
+    <a href="#home">
+      <svelte:component this={currLogoComponent()} />
+    </a>
     <NavLinks {location} />
     {#if showSideNav}
       <SideBar on:blur={handleCloseSideBar}>
