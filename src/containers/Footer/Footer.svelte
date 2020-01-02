@@ -39,8 +39,8 @@
 <footer>
   <section>
     <div>
-      <SocialIcon />
-      <SocialIcon socialType="instagram" />
+      <SocialIcon href="https://www.facebook.com/Enbusiness-1520586474901498/"/>
+      <SocialIcon socialType="instagram" href="https://instagram.com/enbusiness?igshid=16u4cuxk9n1u2" />
       <SocialIcon socialType="whatsapp" />
     </div>
     <Logo />

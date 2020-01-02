@@ -63,6 +63,14 @@
 <style lang="scss">
   @import "../style/theme.scss";
 
+  .wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 50;
+    transition: 0.5s; 
+  }
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -71,8 +79,6 @@
     height: fit-content;
     max-width: $landscape;
     height: 7rem;
-    transition: 0.5s;
-    z-index: 50;
 
     :global(figure) {
       margin-right: auto;
@@ -108,17 +114,18 @@
   }
 </style>
 
-<nav class:float={floatNavBar}>
-  <span on:click={() => (showSideNav = true)}>
-    <MdMenu />
-  </span>
-  <svelte:component this={currLogoComponent()} />
-  <!-- <Logo size="sm" /> -->
-  <NavLinks {location} />
-  {#if showSideNav}
-    <SideBar on:blur={handleCloseSideBar}>
-      <Logo />
-      <NavLinks {location} block={true} />
-    </SideBar>
-  {/if}
-</nav>
+<div class="wrapper" class:float={floatNavBar}>
+  <nav>
+    <span on:click={() => (showSideNav = true)}>
+      <MdMenu />
+    </span>
+    <svelte:component this={currLogoComponent()} />
+    <NavLinks {location} />
+    {#if showSideNav}
+      <SideBar on:blur={handleCloseSideBar}>
+        <Logo />
+        <NavLinks {location} block={true} />
+      </SideBar>
+    {/if}
+  </nav>
+</div>

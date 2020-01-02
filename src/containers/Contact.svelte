@@ -16,7 +16,7 @@
     justify-content: space-evenly;
     margin: auto;
     max-width: 80rem;
-    margin-bottom: 6rem;
+    margin-bottom: 10rem;
 
     h6 {
       text-transform: uppercase;
@@ -48,7 +48,8 @@
     background-color: $main-color;
     border-radius: $radius;
 
-    > p, div > p {
+    > p,
+    div > p {
       font-size: 1.3rem;
       margin-left: 2rem;
     }
@@ -77,16 +78,16 @@
         <MdRoom />
         <p>Localização</p>
       </span>
-      <p>Condomínio Jardin das Rosas, 148 R/C</p>
+      <p>Av. Pedro de Castro Van-Dúnem "Loy" N° 76, 1° Andar.</p>
     </div>
     <div>
       <span>
         <FiPhone />
         <p>Telefones</p>
       </span>
-      <p>990 390 324</p>
-      <p>935 677 777</p>
       <p>927 939 824</p>
+      <p>935 677 777</p>
+      <p>923 481 267</p>
     </div>
     <div>
       <span>

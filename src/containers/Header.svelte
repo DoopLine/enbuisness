@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   // import { fade } from "svelte/transition";
 
   import Button from "../components/Button.svelte";
@@ -6,6 +7,11 @@
   import NavBar from "../components/NavBar.svelte";
 
   let currColor = "blue";
+  let animate = false;
+
+  onMount(() => {
+    animate = true;
+  });
 </script>
 
 <style lang="scss">
@@ -14,17 +20,19 @@
   .header {
     display: flex;
     flex-direction: column;
-    background: url("assets/bg_polygon.png") no-repeat $main-color;
+    background-color: $main-color;
+    background-repeat: no-repeat;
+    // background-image: url("/assets/bg_polygon.png");
     background-size: cover;
     background-position-y: center;
     height: fit-content;
     padding: 3rem 6rem;
     position: relative;
     align-items: center;
-    height: 65rem;
+    height: 75rem;
 
-    @media only screen and (max-width: $tablet) {
-      height: 70rem;
+    @media only screen and (min-width: $landscape + 500) {
+      height: 100rem;
     }
   }
 
@@ -40,13 +48,18 @@
     display: flex;
     height: 100%;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: $landscape;
     align-items: center;
+    z-index: 1;
 
     @media only screen and (max-width: $tablet) {
       flex-direction: column-reverse;
       justify-content: center;
+    }
+
+    @media only screen and (min-width: $landscape) {
+      height: 85%;
     }
 
     &_text {
@@ -75,11 +88,21 @@
     }
   }
 
-  img {
+  .handshake-image {
     position: absolute;
     bottom: -30px;
     animation: fadeInUp 1s ease backwards;
-    max-width: 101%;
+    width: 100%;
+    transform: scale(1.1);
+  }
+
+  .bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>
 
@@ -91,10 +114,17 @@
   <NavBar {currColor} />
   <section class="header_content">
     <article class="header_content_text">
-      <h1 class="slide-in-left">Enbusiness</h1>
-      <h6 class="slide-in-left">Qualquer negócio em boas mãos.</h6>
+      <h1 class:slide-in-left={animate}>Enbusiness</h1>
+      <h6 class:slide-in-left={animate}>Qualquer negócio em boas mãos.</h6>
     </article>
     <Carrocel bind:currColor />
   </section>
-  <img src="./assets/svg/shake_hands.svg" alt="aperto de mãos" />
+  <img
+    class="bg-image"
+    src="./assets/bg_polygon.png"
+    alt="enbusiness polígono" />
+  <img
+    class="handshake-image"
+    src="./assets/svg/shake_hands.svg"
+    alt="aperto de mãos" />
 </header>

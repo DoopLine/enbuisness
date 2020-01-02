@@ -4,13 +4,14 @@
   import FaWhatsapp from "svelte-icons/fa/FaWhatsapp.svelte";
 
   export let socialType = "facebook";
+  export let href = "#";
 </script>
 
 <style lang="scss">
   @import "../style/theme.scss";
   @import "../style/mixins.scss";
 
-  span {
+  a {
     @include flex-center;
     width: 5rem;
     height: 5rem;
@@ -49,7 +50,9 @@
   }
 </style>
 
-<span
+<a
+  {href}
+  target="_blank"
   class:whatsapp={socialType === 'whatsapp'}
   class:facebook={socialType === 'facebook'}
   class:instagram={socialType === 'instagram'}>
@@ -62,4 +65,4 @@
   {#if socialType === 'whatsapp'}
     <FaWhatsapp />
   {/if}
-</span>
+</a>

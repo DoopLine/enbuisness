@@ -37,7 +37,8 @@
     justify-content: center;
   }
 
-  img {
+  img,
+  video {
     width: 49%;
     height: 49.5%;
     object-fit: cover;
@@ -67,7 +68,16 @@
 
 <article>
   {#each images as { text, image }, i}
-    <img src={image} alt="teste" on:click={() => handleOpenShowImage(i)} />
+    {#if image.endsWith('.mp4')}
+      <video
+        src={image}
+        autoplay
+        muted
+        loop
+        on:click={() => handleOpenShowImage(i)} />
+    {:else}
+      <img src={image} alt="teste" on:click={() => handleOpenShowImage(i)} />
+    {/if}
   {/each}
   {#if showImage}
     <GridImagePreview

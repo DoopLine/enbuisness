@@ -38,12 +38,20 @@
       height: initial;
       max-height: initial;
     }
+
+    &:nth-child(1) {
+      button {
+        animation: blink 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      }
+    }
   }
 
-  figure {
+  button {
     position: relative;
     display: flex;
     justify-content: center;
+    border: none;
+    outline: none;
     align-items: center;
     width: 100%;
     height: auto;
@@ -51,6 +59,14 @@
     border-radius: $radius;
     background-color: $main-color;
     cursor: pointer;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 0 5px 12px 1px #00000054;
+    }
+    &:focus {
+      box-shadow: 0 5px 12px 1px #00000080;
+    }
 
     @media only screen and (max-width: $mobile) {
       height: 30rem;
@@ -113,7 +129,7 @@
   {#if showGrid}
     <GridImage {images} bind:currImageindex={currIndex} />
   {:else}
-    <figure
+    <button
       class:danger={type === 'graphics'}
       class:success={type === 'economic'}
       on:click={handleShowGrid}>
@@ -125,7 +141,7 @@
         <Logo size="lg" />
       {/if}
       <EnOutline />
-    </figure>
+    </button>
   {/if}
   <article>
     <h4>{title}</h4>
@@ -133,10 +149,9 @@
       <p>{images[currIndex].text}</p>
     {:else}
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
-        rerum dolorum aspernatur quisquam nam laboriosam pariatur esse ad, iure
-        vitae? Necessitatibus pariatur quod sequi ipsum repudiandae facilis
-        eaque, voluptates voluptate!
+        <slot>
+          lsklf;kdsl;kfl;sdkfl;dskl;fkdsl;fksdlkfl;sdkfl;sdkfl;dsklf;sdk;l
+        </slot>
       </p>
     {/if}
     <Button on:click={handleShowGrid}>

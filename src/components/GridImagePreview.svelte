@@ -32,7 +32,8 @@
       color: $white-color;
     }
   }
-  img {
+  img,
+  video {
     height: 100%;
     width: 70%;
     object-fit: cover;
@@ -42,14 +43,18 @@
     position: absolute;
     width: 99%;
     height: 100%;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0, 0.5); 
     border-radius: $radius;
   }
 </style>
 
-<div tabindex="0" bind:this={showImageNode} on:blur transition:fade>
-  <MdChevronLeft on:click={()=> dispatch('prev')} />
-  <img src={imagePath} alt="teste" />
-  <MdChevronRight on:click={()=> dispatch('next')} />
+<div tabindex="0" transition:fade on:blur bind:this={showImageNode}>
+  <MdChevronLeft on:click={() => dispatch('prev')} />
+  {#if imagePath.endsWith('.mp4')}
+    <video src={imagePath} autoplay muted loop />
+  {:else}
+    <img src={imagePath} alt="teste" />
+  {/if}
+  <MdChevronRight on:click={() => dispatch('next')} />
 </div>
 <span />

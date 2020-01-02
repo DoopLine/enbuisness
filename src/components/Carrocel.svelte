@@ -7,10 +7,10 @@
   export let currColor;
 
   const items = [
-    { image: "./assets/intro.mp4", desc: "Introdução", color: "blue" },
-    { image: "./assets/photo1.png", desc: "Social", color: "blue" },
-    { image: "./assets/photo2.jpeg", desc: "some ", color: "orange" },
-    { image: "./assets/photo3.jpeg", desc: "Desc", color: "green" }
+    { image: "./assets/intro.mp4", desc: "Introdução", color: "blue" }
+    // { image: "./assets/photo1.png", desc: "Social", color: "blue" },
+    // { image: "./assets/photo2.jpeg", desc: "some ", color: "orange" },
+    // { image: "./assets/photo3.jpeg", desc: "Desc", color: "green" }
   ];
 
   let currIndex = 0;
@@ -81,8 +81,9 @@
       <video
         src={items[currIndex].image}
         alt={items[currIndex].desc}
-        controls
-        on:ended={e => e.target.play()} />
+        muted
+        autoplay
+        loop />
     {:else}
       <img src={items[currIndex].image} alt={items[currIndex].desc} />
     {/if}
