@@ -4,8 +4,8 @@
 
 // setup the font
 @font-face {
-	font-family:  'Ubuntu';
-	src: url('/assets/fonts/Ubuntu-Regular.ttf');
+	font-family: "Ubuntu";
+	src: url("/assets/fonts/Ubuntu-Regular.ttf");
 }
 
 // Box sizing rules
@@ -19,22 +19,16 @@
 
 html,
 body {
-    position: relative;
-	min-width: 100vh;
+	position: relative;
+	min-height: 100vh;
 	font-size: 62.5%;
 	font-family: "Ubuntu", "Helvetica", sans-serif;
 	scroll-behavior: smooth;
-	overflow-x: hidden;
-
-	// @media only screen and (max-width: $desktop - 50) {
-	// 	font-size: 50.5%;
-	// }
+	display: initial;
 }
-
 
 // set core body defaults
 body {
-	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }

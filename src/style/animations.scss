@@ -63,3 +63,17 @@
 		opacity: 1;
 	}
 }
+
+@keyframes EnRanbow {
+	0% {
+		fill: $light-color;
+	}
+
+	40% {
+		fill: $danger-color;
+	}
+
+	80% {
+		fill: $success-color;
+	}
+}

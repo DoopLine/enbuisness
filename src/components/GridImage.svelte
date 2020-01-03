@@ -30,7 +30,7 @@
     display: flex;
     width: 100%;
     height: auto;
-    min-width: 30rem;
+    // min-width: 30rem;
     border-radius: $radius;
     flex-wrap: wrap;
     position: relative;
@@ -63,11 +63,16 @@
       margin-bottom: 0.3rem;
       margin-right: 0.3rem;
     }
+
+    @media only screen and (max-width: $mobile - 100) {
+      width: 100%;
+      height: auto;
+    }
   }
 </style>
 
 <article>
-  {#each images as { text, image }, i}
+  {#each images as { text, image, alt }, i}
     {#if image.endsWith('.mp4')}
       <video
         src={image}
@@ -76,12 +81,13 @@
         loop
         on:click={() => handleOpenShowImage(i)} />
     {:else}
-      <img src={image} alt="teste" on:click={() => handleOpenShowImage(i)} />
+      <img src={image} {alt} on:click={() => handleOpenShowImage(i)} />
     {/if}
   {/each}
   {#if showImage}
     <GridImagePreview
       imagePath={images[currImageindex].image}
+      alt={images[currImageindex].alt}
       on:blur={() => (showImage = false)}
       on:next={handleNext}
       on:prev={handlePrev} />

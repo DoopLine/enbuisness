@@ -33,7 +33,7 @@
     margin-bottom: 10rem;
     height: 30rem;
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet) {
       flex-direction: column;
       height: initial;
       max-height: initial;
@@ -55,7 +55,7 @@
     align-items: center;
     width: 100%;
     height: auto;
-    min-width: 30rem;
+    // min-width: 30rem;
     border-radius: $radius;
     background-color: $main-color;
     cursor: pointer;
@@ -68,8 +68,8 @@
       box-shadow: 0 5px 12px 1px #00000080;
     }
 
-    @media only screen and (max-width: $mobile) {
-      height: 30rem;
+    @media only screen and (max-width: $tablet) {
+      height: 25rem;
     }
   }
   .success {
@@ -93,7 +93,7 @@
       margin-bottom: 1rem;
     }
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet) {
       margin-top: 2rem;
       padding: 1rem;
     }
@@ -107,7 +107,7 @@
   .reverse {
     flex-direction: row-reverse;
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet) {
       flex-direction: column;
       height: initial;
       max-height: initial;
@@ -117,7 +117,7 @@
       padding-right: 10rem;
       padding-left: 0;
 
-      @media only screen and (max-width: $mobile) {
+      @media only screen and (max-width: $tablet) {
         margin-top: 2rem;
         padding: 1rem;
       }

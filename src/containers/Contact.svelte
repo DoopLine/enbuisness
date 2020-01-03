@@ -5,6 +5,10 @@
 
   import Input from "../components/Input.svelte";
   import Button from "../components/Button.svelte";
+
+  let email = "";
+  let name = "";
+  // let email = '';
 </script>
 
 <style lang="scss">
@@ -23,7 +27,7 @@
       margin-bottom: 2rem;
     }
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet - 100) {
       flex-direction: column;
       margin-bottom: 5rem;
     }
@@ -45,6 +49,8 @@
 
     @media only screen and (max-width: $mobile) {
       align-items: center;
+      padding: 1rem;
+      margin-top: 2rem;
 
       :global(button) {
         align-self: initial;
@@ -112,10 +118,14 @@
     </div>
     <p>ANGOLA - LUANDA</p>
   </article>
-  <form>
+  <form action="mailto:{email}" method="GET">
     <h6>Mantenha-se em Contacto</h6>
-    <Input placeholder="Seu nome..." />
-    <Input type="email" placeholder="Seu email..." />
+    <Input placeholder="Seu nome..." on:input={e => (name = e.target.value)} />
+    <Input
+      type="email"
+      placeholder="Seu email..."
+      value={email}
+      on:input={e => (email = e.target.value)} />
     <Input type="textarea" placeholder="Sua mensagem..." />
     <Button type="submit">Enviar</Button>
   </form>

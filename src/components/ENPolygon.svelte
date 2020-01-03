@@ -10,6 +10,7 @@
     width: 1.5rem;
     animation: zoomIn 0.3s ease-out;
     fill: currentColor;
+    animation: EnRanbow 5s ease infinite;
   }
 
   .md {

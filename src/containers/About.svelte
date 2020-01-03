@@ -9,7 +9,7 @@
     font-size: 1.7rem;
     display: flex;
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet) {
       flex-direction: column;
     }
 
@@ -26,7 +26,7 @@
         margin-right: 1rem;
       }
 
-      @media only screen and (max-width: $mobile) {
+      @media only screen and (max-width: $tablet) {
         &:not(:last-child) {
           margin-right: initial;
           margin-bottom: 3rem;

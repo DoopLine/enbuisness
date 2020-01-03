@@ -43,8 +43,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50rem;
-  }
+        max-width: 50rem;
+  } 
 
   figure {
     flex-basis: 100%;
@@ -55,6 +55,7 @@
     @media only screen and (max-width: $tablet) {
       margin: 0 2rem;
       margin-bottom: 4rem;
+      height: auto;
     }
 
     img,
@@ -88,6 +89,8 @@
         alt={items[currIndex].desc}
         muted
         autoplay
+        autobuffer
+        playsinline
         loop />
     {:else}
       <img src={items[currIndex].image} alt={items[currIndex].desc} />

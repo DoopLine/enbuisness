@@ -6,6 +6,8 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
 
+const postcssPresetEnv = require("postcss-preset-env");
+
 const production = !process.env.ROLLUP_WATCH;
 
 const preprocess = sveltePreprocess({
@@ -13,8 +15,9 @@ const preprocess = sveltePreprocess({
 		includePaths: ["src"]
 	},
 	postcss: {
-		plugins: [require("autoprefixer")]
+		plugins: [require("autoprefixer"), postcssPresetEnv({ stage: 3 })]
 	}
+
 });
 
 export default {

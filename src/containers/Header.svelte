@@ -5,6 +5,7 @@
   import Button from "../components/Button.svelte";
   import Carrocel from "../components/Carrocel.svelte";
   import NavBar from "../components/NavBar.svelte";
+  import EnHandShake from "../components/EnHandShake.svelte";
 
   let currColor = "blue";
   let animate = false;
@@ -54,6 +55,10 @@
       justify-content: center;
     }
 
+    @media only screen and (min-width: $tablet) {
+      padding: 0 3rem;
+    }
+
     @media only screen and (max-width: $mobile) {
       margin-bottom: -1rem;
     }
@@ -68,6 +73,10 @@
       justify-content: center;
       margin-bottom: 8rem;
 
+      @media only screen and (max-width: $tablet) {
+        text-align: center;
+      }
+
       h1 {
         color: $white-color;
         margin-bottom: -1rem;
@@ -75,6 +84,9 @@
         animation-duration: 1s;
         animation-delay: 1s;
         animation-fill-mode: backwards;
+        @media only screen and (max-width: $tablet + 150) {
+          font-size: var(--lg);
+        }
       }
 
       h6 {
@@ -88,11 +100,13 @@
     }
   }
 
-  .handshake-image {
-    animation: fadeInUp 1s ease backwards;
-    width: 100%;
-    transform: scale(1.1);
-  }
+  // .handshake-image {
+  //   animation: fadeInUp 1s ease backwards;
+  //   z-index: 1;
+  //   margin-bottom: -1rem;
+  //   height: auto;
+  //   width: 100%;
+  // }
 
   .bg-image {
     position: absolute;
@@ -101,6 +115,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.5;
   }
 </style>
 
@@ -121,8 +136,5 @@
     class="bg-image"
     src="./assets/bg_polygon.png"
     alt="enbusiness polígono" />
-  <img
-    class="handshake-image"
-    src="./assets/svg/shake_hands.svg"
-    alt="aperto de mãos" />
+  <EnHandShake />
 </header>

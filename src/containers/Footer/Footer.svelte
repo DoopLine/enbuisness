@@ -22,9 +22,13 @@
     display: flex;
     align-items: center;
 
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet - 100) {
       flex-direction: column;
       align-items: flex-end;
+
+      :last-child {
+        text-align: center;
+      }
     }
 
     :last-child {
@@ -49,7 +53,7 @@
       <SocialIcon
         socialType="instagram"
         href="https://instagram.com/enbusiness?igshid=16u4cuxk9n1u2" />
-      <SocialIcon socialType="whatsapp" />
+      <SocialIcon socialType="whatsapp" href="https://whats.link/enbusiness" />
     </div>
     <a href="#home">
       <Logo />

@@ -40,5 +40,5 @@
 {#if type === 'textarea'}
   <textarea cols="30" rows="10" {placeholder}>{value}</textarea>
 {:else}
-  <input {type} {placeholder} {value} />
+  <input {type} {placeholder} {value} on:input/>
 {/if}

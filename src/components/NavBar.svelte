@@ -14,7 +14,7 @@
 
   let floatNavBar = false;
   let showSideNav = false;
-  let location = window.location.hash;
+  let location = "#home";
   let timeout;
 
   $: currLogoComponent = () => {
@@ -116,6 +116,18 @@
     padding: 0 6rem;
     background-color: $main-color;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+
+    @media only screen and (max-width: $mobile) {
+      padding: 0 3rem;
+    }
+  }
+
+  a {
+    @media only screen and (max-width: $mobile + 100) {
+      :global(svg) {
+        width: 15rem;
+      }
+    }
   }
 </style>
 

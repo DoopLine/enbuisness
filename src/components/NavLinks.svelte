@@ -59,11 +59,21 @@
 
   .block {
     display: block;
+    margin-top: 4rem;
 
     li {
       margin-bottom: 3rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #fff;
+
+      > a {
+        border-bottom: 2px solid #335897;
+        transition: 0.3s ease-in;
+        display: flex;
+        padding: 1rem;
+
+        &:hover {
+          background-color: #33589799;
+        }
+      }
     }
 
     .active_link {

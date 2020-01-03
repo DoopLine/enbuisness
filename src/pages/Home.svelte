@@ -38,7 +38,7 @@
   </InfoCard>
   <InfoCard
     type="graphics"
-    title="Media Digital"
+    title="Mídea Digital"
     reverse={true}
     images={graphicsServiceData}>
     Tornamo-nos aliados dos nossos clientes para identificar a essência de sua
