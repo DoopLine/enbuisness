@@ -8,7 +8,7 @@ module.exports = {
 			includePaths: ["src"]
 		},
 		postcss: {
-			plugins: [require("autoprefixer"), postcssPresetEnv({ stage: 3 })]
+			plugins: [require("autoprefixer")({cascade: false}), postcssPresetEnv({ stage: 3 })]
 		}
 	})
 };

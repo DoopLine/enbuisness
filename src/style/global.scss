@@ -57,3 +57,20 @@ textarea,
 select {
 	font: inherit;
 }
+
+// custom scroll
+
+::-webkit-scrollbar{
+        background-color: $light-color;
+        width: .7rem;
+        // border-radius: $radius;
+    }
+    ::-webkit-scrollbar-thumb{
+        // border-radius: $radius;
+        box-shadow: 0 0 5px #0000004a;
+        background-color: #3763b061;
+        &:hover{
+        background-color: #345ca0;
+
+        }
+    }

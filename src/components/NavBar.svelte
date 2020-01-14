@@ -1,5 +1,6 @@
 <script>
   import { onDestroy } from "svelte";
+  import {location} from 'svelte-spa-router';
 
   import FaBars from "svelte-icons/fa/FaBars.svelte";
   import MdMenu from "svelte-icons/md/MdMenu.svelte";
@@ -10,11 +11,11 @@
   import NavLinks from "./NavLinks.svelte";
   import SideBar from "./SideBar.svelte";
 
+  export let floatNavBar = false;
   export let currColor = "blue";
 
-  let floatNavBar = false;
   let showSideNav = false;
-  let location = "#home";
+  let hash = "#home";
   let timeout;
 
   $: currLogoComponent = () => {
@@ -35,20 +36,24 @@
   });
 
   function handleWindowScroll(e) {
-    // window.location.hash = location;
-    window.scrollY > 5 ? (floatNavBar = true) : (floatNavBar = false);
+    window.scrollY > 150 ? (floatNavBar = true) : (floatNavBar = false);
+    if($location === '/cursos'){
+      hash = null;
+      return;
+    } 
+
     let calc =
       (window.scrollY * 100) /
       (document.scrollingElement.scrollHeight - window.innerHeight);
 
-    if (calc >= 25 && calc < 78) {
-      location = "#service";
-    } else if (calc >= 78 && calc < 98) {
-      location = "#contact";
-    } else if (calc >= 98) {
-      location = "#about";
+    if (calc >= 19 && calc < 65) {
+      hash = "#service";
+    } else if (calc >= 65 && calc < 98) {
+      hash = "#contact";
+    } else if (calc >= 96) {
+      hash = "#about";
     } else {
-      location = "#home";
+      hash = "#home";
     }
   }
 
@@ -69,10 +74,10 @@
     justify-content: center;
     z-index: 50;
     transition: 0.5s;
-    padding: 3rem 6rem;
+    padding: 2rem 6rem;
 
     @media only screen and (max-width: $mobile) {
-      padding: 3rem;
+      padding: 1rem 3rem;
     }
   }
 
@@ -139,11 +144,11 @@
     <a href="#home">
       <svelte:component this={currLogoComponent()} />
     </a>
-    <NavLinks {location} />
+    <NavLinks {hash} />
     {#if showSideNav}
       <SideBar on:blur={handleCloseSideBar}>
         <Logo />
-        <NavLinks {location} block={true} />
+        <NavLinks {hash} block={true} />
       </SideBar>
     {/if}
   </nav>

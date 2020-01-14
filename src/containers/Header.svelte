@@ -1,18 +1,14 @@
 <script>
-  import { onMount } from "svelte";
-  // import { fade } from "svelte/transition";
+  import { location } from "svelte-spa-router";
+
+  import HeaderHome from "./HeaderHome.svelte";
+  import HeaderCourse from "./HeaderCourse.svelte";
 
   import Button from "../components/Button.svelte";
-  import Carrocel from "../components/Carrocel.svelte";
   import NavBar from "../components/NavBar.svelte";
   import EnHandShake from "../components/EnHandShake.svelte";
 
   let currColor = "blue";
-  let animate = false;
-
-  onMount(() => {
-    animate = true;
-  });
 </script>
 
 <style lang="scss">
@@ -23,7 +19,7 @@
     flex-direction: column;
     background-color: $main-color;
     background-repeat: no-repeat;
-    // background-image: url("/assets/bg_polygon.png");
+    background-image: url("/assets/bg_polygon.png");
     background-size: cover;
     background-position-y: center;
     height: fit-content;
@@ -39,74 +35,6 @@
   .bg-green {
     background-color: $success-color;
   }
-
-  .header_content {
-    display: flex;
-    height: fit-content;
-    margin-bottom: 3rem;
-    width: 100%;
-    justify-content: space-around;
-    max-width: $landscape;
-    align-items: center;
-    z-index: 1;
-
-    @media only screen and (max-width: $tablet) {
-      flex-direction: column-reverse;
-      justify-content: center;
-    }
-
-    @media only screen and (min-width: $tablet) {
-      padding: 0 3rem;
-    }
-
-    @media only screen and (max-width: $mobile) {
-      margin-bottom: -1rem;
-    }
-
-    // @media only screen and (min-width: $landscape) {
-    //   height: 85%;
-    // }
-
-    &_text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-bottom: 8rem;
-
-      @media only screen and (max-width: $tablet) {
-        text-align: center;
-      }
-
-      h1 {
-        color: $white-color;
-        margin-bottom: -1rem;
-        text-shadow: 0 0 1px lighten($dark-color, 5);
-        animation-duration: 1s;
-        animation-delay: 1s;
-        animation-fill-mode: backwards;
-        @media only screen and (max-width: $tablet + 150) {
-          font-size: var(--lg);
-        }
-      }
-
-      h6 {
-        color: $light-color;
-        font-weight: 500;
-        padding-left: 6px;
-        animation-duration: 1s;
-        animation-delay: 2s;
-        animation-fill-mode: backwards;
-      }
-    }
-  }
-
-  // .handshake-image {
-  //   animation: fadeInUp 1s ease backwards;
-  //   z-index: 1;
-  //   margin-bottom: -1rem;
-  //   height: auto;
-  //   width: 100%;
-  // }
 
   .bg-image {
     position: absolute;
@@ -125,16 +53,15 @@
   class:bg-orange={currColor === 'orange'}
   class:bg-green={currColor === 'green'}>
   <NavBar {currColor} />
-  <section class="header_content">
-    <article class="header_content_text">
-      <h1 class:slide-in-left={animate}>Enbusiness</h1>
-      <h6 class:slide-in-left={animate}>Qualquer negócio em boas mãos.</h6>
-    </article>
-    <Carrocel bind:currColor />
-  </section>
-  <img
+
+  {#if $location === '/cursos'}
+    <HeaderCourse />
+  {:else}
+    <HeaderHome bind:currColor />
+  {/if}
+  <!-- <img
     class="bg-image"
     src="./assets/bg_polygon.png"
-    alt="enbusiness polígono" />
+    alt="enbusiness polígono" /> -->
   <EnHandShake />
 </header>

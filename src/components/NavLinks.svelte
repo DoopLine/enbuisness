@@ -1,16 +1,18 @@
 <script>
+  import { location } from "svelte-spa-router";
+
   import EnPolygon from "../components/ENPolygon.svelte";
 
   export let addPolygon = true;
   export let block = false;
 
-  export let location = window.location.hash;
+  export let hash = window.location.hash;
 
   const linksList = [
     { title: "início", href: "#home" },
     { title: "serviços", href: "#service" },
-    // { title: "portfólio", href: "*" },
-    { title: "contato", href: "#contact" },
+    { title: "cursos", href: "#/cursos" },
+    { title: "contatos", href: "#contact" },
     { title: "sobre", href: "#about" }
   ];
 </script>
@@ -86,10 +88,16 @@
 <ul class:block>
   {#each linksList as { title, href }}
     <li class="link_item">
-      {#if location === href && addPolygon}
+      {#if href.replace('#', '') === $location}
+        <EnPolygon />
+      {:else if hash === href && addPolygon}
         <EnPolygon />
       {/if}
-      <a {href} class:active_link={location === href}>{title}</a>
+      <a
+        {href}
+        class:active_link={hash === href || href.replace('#', '') === $location}>
+        {title}
+      </a>
     </li>
   {/each}
 </ul>

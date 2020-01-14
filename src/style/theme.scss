@@ -1,12 +1,29 @@
 // theme.scss
 
 // colors
-$main-color: rgb(55,99,176);
-$light-color: rgb(230,230,230);
+$main-color: rgb(55, 99, 176);
+$light-color: rgb(230, 230, 230);
 $dark-color: rgb(57, 60, 66);
 $danger-color: rgb(237, 111, 69);
 $success-color: rgb(135, 204, 30);
 $white-color: #fff;
+
+//photoshop color
+$ps-light-color: #26c9ff;
+$ps-dark-color: #061e26;
+
+//illustrator color
+$ai-light-color: #ff811c;
+$ai-dark-color: #211107;
+
+//after effecs color
+$ae-light-color: #cd91fb;
+$ae-dark-color: #1e003e;
+
+//excel color
+$ex-light-color: #16a851;
+$ex-dark-color: #0e8140;
+
 // break points
 $mobile: 425px;
 $tablet: 768px;

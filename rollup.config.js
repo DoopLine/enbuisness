@@ -15,9 +15,11 @@ const preprocess = sveltePreprocess({
 		includePaths: ["src"]
 	},
 	postcss: {
-		plugins: [require("autoprefixer"), postcssPresetEnv({ stage: 3 })]
+		plugins: [
+			require("autoprefixer")({ cascade: false }),
+			postcssPresetEnv({ stage: 3 })
+		]
 	}
-
 });
 
 export default {
@@ -43,7 +45,8 @@ export default {
 		babel({
 			extensions: [".js", ".mjs", ".html", ".svelte"],
 			runtimeHelpers: true,
-			exclude: ["node_modules/@babel/**"]
+			exclude: ["node_modules/@babel/**"],
+			presets: ["@babel/preset-env"]
 		}),
 
 		// If you have external dependencies installed from

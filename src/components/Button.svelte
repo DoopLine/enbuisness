@@ -2,6 +2,7 @@
   export let type = "button";
   export let secondary = false;
   export let size = "md";
+  export let theme = "";
 </script>
 
 <style lang="scss">
@@ -47,8 +48,31 @@
     padding: 1rem 2.5rem;
     font-size: 2rem;
   }
+
+  .ps-theme {
+      color: $white-color;
+      background-color: $ps-dark-color;
+      border: 3px solid $ps-light-color;
+    }
+
+  .ai-theme {
+      background-color: $ai-dark-color;
+      border: 3px solid $ai-light-color;
+      color: $ai-light-color;
+    }
+    .ae-theme {
+      background-color: $ae-dark-color;
+      border: 3px solid $ae-light-color;
+      color: $ae-light-color;
+    }
+
+    .ex-theme {
+      color: $white-color;
+      background-color: $ex-dark-color;
+      border: 3px solid $ex-light-color;
+    }
 </style>
 
-<button on:click {type} class:secondary class:large={size === 'lg'}>
+<button class={theme} on:click {type} class:secondary class:large={size === 'lg'}>
   <slot>Lorem</slot>
 </button>

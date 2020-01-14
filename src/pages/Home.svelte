@@ -2,6 +2,7 @@
   import InfoCard from "../components/InfoCard.svelte";
   import Contact from "../containers/Contact.svelte";
   import About from "../containers/About.svelte";
+  import PartnerSection from "../containers/PartnerSection.svelte";
 
   import {
     graphicsServiceData,
@@ -29,6 +30,13 @@
   }
 </style>
 
+<svelte:head>
+		<title>Enbusiness - Seja Bem-vindo</title>
+    <meta name="description" content="A ENBUSINESS é uma empresa angolana de comércio e prestação de serviço,
+    cujos quadros têm vindo a colaborar com entidades públicas e privadas,
+    actuando em diversos sectores de actividade.">
+</svelte:head>
+
 <main>
   <h5 id="service">Conheça os nossos serviços</h5>
   <InfoCard title="Comércio" images={geralServiceData}>
@@ -38,7 +46,7 @@
   </InfoCard>
   <InfoCard
     type="graphics"
-    title="Mídea Digital"
+    title="Mídia Digital"
     reverse={true}
     images={graphicsServiceData}>
     Tornamo-nos aliados dos nossos clientes para identificar a essência de sua
@@ -51,8 +59,9 @@
     para os diferentes problemas no meio empresarial, trabalhamos nas áreas de
     <strong>Gestão, Contabilidade e Físcalidade.</strong>
   </InfoCard>
-  <h5 id="contact">Contacto</h5>
+  <h5 id="contact">Contactos</h5>
   <Contact />
+  <PartnerSection />
   <h5 id="about">Sobre Nós</h5>
   <About />
 </main>
