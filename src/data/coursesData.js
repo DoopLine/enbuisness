@@ -1,78 +1,69 @@
-export const basicModule = {
-	title: "Módulos Básicos",
-	modules: [
-		{
-			name: "Conhecendo o Photoshop",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-		{
-			name: "Camadas",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-		{
-			name: "Seleção e Recortes",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-		{
-			name: "Estilos de Camadas",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-		{
-			name: "Bonus",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		}
-	]
+import defaultData from "./courses/default";
+import photoshopData from "./courses/photoshop";
+import cssData from "./courses/css";
+import htmlData from "./courses/html";
+import javascriptData from "./courses/javascript";
+import nodejsData from "./courses/nodejs";
+import phpData from "./courses/php";
+import animationData from "./courses/animation";
+import aftereffectsData from "./courses/aftereffects";
+import premiereData from "./courses/premiere";
+import indesignData from "./courses/indesign";
+import lightroomData from "./courses/lightroom";
+import incopyData from "./courses/incopy";
+import preludeData from "./courses/prelude";
+import illustratorData from "./courses/illustrator";
+
+export const courses = [
+	"photoshop",
+	"illustrator",
+	"after effects",
+	"excel",
+	"html",
+	"css",
+	"javascript",
+	"node js",
+	"php",
+	"marketing digital",
+	"animation",
+	"incopy",
+	"indesign",
+	"lightroom",
+	"prelude",
+	"premiere"
+];
+
+export const getModules = course => {
+	switch (course) {
+		case "photoshop":
+			return photoshopData;
+		case "javascript":
+			return javascriptData;
+		case "css":
+			return cssData;
+		case "html":
+			return htmlData;
+		case "node js":
+			return nodejsData;
+		case "php":
+			return phpData;
+		case "animation":
+			return animationData;
+		case "after effects":
+			return aftereffectsData;
+		case "premiere":
+			return premiereData;
+		case "indesign":
+			return indesignData;
+		case "lightroom":
+			return lightroomData;
+		case "incopy":
+			return incopyData;
+		case "prelude":
+			return preludeData;
+		case "illustrator":
+			return illustratorData;
+		default:
+			return defaultData;
+	}
 };
-
-
-export const advanceModule = {
-    title: "Módulos Avançados",
-    modules: [
-        {
-			name: "Montagens e Composição",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-        {
-			name: "Retoque de Imagens",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-        {
-			name: "Mascaras e Filtros",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-        {
-			name: "Ajustes e Ações",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		},
-        {
-            name: "Pixels e Vectores",
-            desc:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-            price: 10000
-        },
-        {
-			name: "Bonus",
-			desc:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo earum deleniti aspernatur, nemo totam inventore eum ratione ullam voluptas perferendis doloribus minima mollitia ",
-			price: 10000
-		}      
-    ]
-  };

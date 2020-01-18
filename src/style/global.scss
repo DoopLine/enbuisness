@@ -24,7 +24,6 @@ body {
 	font-size: 62.5%;
 	font-family: "Ubuntu", "Helvetica", sans-serif;
 	scroll-behavior: smooth;
-	display: initial;
 }
 
 // set core body defaults
@@ -60,17 +59,16 @@ select {
 
 // custom scroll
 
-::-webkit-scrollbar{
-        background-color: $light-color;
-        width: .7rem;
-        // border-radius: $radius;
-    }
-    ::-webkit-scrollbar-thumb{
-        // border-radius: $radius;
-        box-shadow: 0 0 5px #0000004a;
-        background-color: #3763b061;
-        &:hover{
-        background-color: #345ca0;
-
-        }
-    }
+::-webkit-scrollbar {
+	background-color: $light-color;
+	width: 0.7rem;
+	// border-radius: $radius;
+}
+::-webkit-scrollbar-thumb {
+	// border-radius: $radius;
+	box-shadow: 0 0 5px #0000004a;
+	background-color: #3763b061;
+	&:hover {
+		background-color: #345ca0;
+	}
+}

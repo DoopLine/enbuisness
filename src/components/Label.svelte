@@ -41,6 +41,64 @@
     color: $white-color;
     background-color: $ex-light-color;
   }
+
+  .ht-theme {
+    color: $white-color;
+    background-color: $ht-light-color;
+  }
+
+  .cs-theme {
+    color: $white-color;
+    background-color: $cs-light-color;
+  }
+
+  .js-theme {
+    color: $white-color;
+    background-color: $js-light-color;
+  }
+
+  .ph-theme {
+    color: $white-color;
+    background-color: $ph-light-color;
+  }
+  .nd-theme {
+    color: $white-color;
+    background-color: $nd-light-color;
+  }
+  .mk-theme {
+    color: $white-color;
+    background: $mk-light-color;
+  }
+
+  .an-theme {
+    color: $white-color;
+    background: $an-light-color;
+  }
+
+  .ic-theme {
+    color: $white-color;
+    background: $ic-light-color;
+  }
+
+  .id-theme {
+    color: $white-color;
+    background: $id-light-color;
+  }
+
+  .lr-theme {
+    color: $white-color;
+    background: $lr-light-color;
+  }
+
+  .pl-theme {
+    color: $white-color;
+    background: $pl-light-color;
+  }
+
+  .pm-theme {
+    color: $white-color;
+    background: $pm-light-color;
+  }
 </style>
 
 <p class={theme} class:small>

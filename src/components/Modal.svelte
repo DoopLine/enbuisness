@@ -4,7 +4,7 @@
 
   import Button from "../components/Button.svelte";
 
-  export let theme = "";
+  export let theme;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -32,13 +32,14 @@
   }
   .modal {
     position: relative;
-    background-color: #fff;
+    // background-color: #fff;
     width: 70%;
     max-width: $landscape;
     min-height: 15rem;
     max-height: 70%;
     padding: 2rem;
     padding-bottom: 3rem;
+    // z-index: 1;
 
     :global(button) {
       position: absolute;
@@ -56,49 +57,11 @@
       width: 100%;
     }
   }
-
-  .ps-theme {
-    background-color: $ps-dark-color;
-    color: $white-color;
-    border: 3px solid $ps-light-color;
-
-    p {
-      background-color: $ps-light-color;
-    }
-  }
-
-  .ai-theme {
-    background-color: $ai-dark-color;
-    color: $white-color;
-    border: 3px solid $ai-light-color;
-
-    p {
-      background-color: $ai-light-color;
-    }
-  }
-  .ae-theme {
-    background-color: $ae-dark-color;
-    color: $white-color;
-    border: 3px solid $ae-light-color;
-
-    p {
-      background-color: $ae-light-color;
-    }
-  }
-  .ex-theme {
-    background-color: $ex-dark-color;
-    color: $white-color;
-    border: 3px solid $ex-light-color;
-
-    p {
-      background-color: $ex-light-color;
-    }
-  }
 </style>
 
 <section transition:slide={{ duration: 600 }}>
   <article class="backdrop" on:click={() => dispatch('close')} />
-  <article class={'modal ' + theme}>
+  <article class={'modal ' + (theme ? theme + '--border' : '')}>
     <slot>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut veritatis
       inventore temporibus nam pariatur quidem! Placeat, ducimus! Facilis ullam

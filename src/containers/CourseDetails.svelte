@@ -1,18 +1,22 @@
 <script>
   import Label from "../components/Label.svelte";
   import RadioButton from "../components/RadioButton.svelte";
-  import { basicModule, advanceModule } from "../data/coursesData.js";
+  import { getModules } from "../data/coursesData.js";
 
   export let theme = "";
+  export let courseType;
 
   let selectedModule = 1;
-
-  // $: console.log(selectedModule);
+  let {sections, courseDesc} = getModules(courseType);
 
   $: currModule =
     selectedModule === 1
-      ? (currModule = basicModule)
-      : (currModule = advanceModule);
+      ? (currModule = sections[0].modules)
+      : (currModule = sections[1].modules);
+
+  const currencyFormat = num =>
+    num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "1,");
+
 </script>
 
 <style lang="scss">
@@ -99,7 +103,7 @@
     e/ou ativas, privilegiando sempre que possível a última.
   </div>
   <div class="column">
-    <Label {theme}>Modulos do Curso</Label>
+    <Label {theme}>Módulos do Curso</Label>
     <div class="radio-group">
       <RadioButton name="module" value={1} bind:group={selectedModule}>
         Básico
@@ -109,13 +113,13 @@
       </RadioButton>
     </div>
     <ul>
-      {#each currModule.modules as { name, price, desc }}
+      {#each currModule as { name, price, desc }}
         <li>
           <details>
             <summary>{name}</summary>
             <p>{desc}</p>
           </details>
-          <Label {theme} small={true}>{price} Kz</Label>
+          <Label {theme} small={true}>{currencyFormat(price)} Akz</Label>
         </li>
       {/each}
     </ul>
